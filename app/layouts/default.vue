@@ -5,6 +5,11 @@
         youtube iframe
       </h1>
     </header>
+    <ul>
+      <li><nuxt-link to="/">TOP</nuxt-link></li>
+      <li><nuxt-link to="/users">user</nuxt-link></li>
+      <li><nuxt-link to="/trainings">training</nuxt-link></li>
+    </ul>
     <nuxt />
     <footer>
       <a href="#">develop by @wiz_ren</a>

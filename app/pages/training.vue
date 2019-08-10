@@ -1,26 +1,19 @@
 <template>
   <div class="container">
-    <user-list />
-    <user-form />
-    <user-form mode="edit" user-id="0" />
-    <p>{{ users }}</p>
+    <url-input-bar class="url-input-bar"/>
+    <frame />
   </div>
 </template>
 
 <script>
-import UserList from '~/components/UserList.vue'
-import UserForm from '~/components/UserForm.vue'
+import UrlInputBar from '~/components/UrlInputBar.vue'
+import Frame from '~/components/Frame.vue'
 
 export default {
   components: {
-    UserForm,
-    UserList,
-  },
-  computed: {
-    users() {
-      return JSON.stringify(this.$store.state.users);
-    }
-  },
+    UrlInputBar,
+    Frame
+  }
 }
 </script>
 
@@ -28,6 +21,7 @@ export default {
 .container {
   margin: 0 auto;
   min-height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;

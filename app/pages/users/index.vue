@@ -1,26 +1,16 @@
 <template>
   <div class="container">
     <user-list />
-    <user-form />
-    <user-form mode="edit" user-id="0" />
-    <p>{{ users }}</p>
   </div>
 </template>
 
 <script>
 import UserList from '~/components/UserList.vue'
-import UserForm from '~/components/UserForm.vue'
 
 export default {
   components: {
-    UserForm,
     UserList,
-  },
-  computed: {
-    users() {
-      return JSON.stringify(this.$store.state.users);
-    }
-  },
+  }
 }
 </script>
 
@@ -28,6 +18,7 @@ export default {
 .container {
   margin: 0 auto;
   min-height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
