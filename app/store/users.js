@@ -10,34 +10,34 @@
 
  */
 
-export const state = () => ({
-  users: [],
-})
+export const state = () => ([])
   
 export const mutations = {
 
   regist (state, value) {
-    const id = state.users.length;
+    const id = state.length;
     const user = {
-      id: id,
+      id: id.toString(),
       ...value,
     }
-    state.users = [
-      ...state.users,
-      user,
-    ];
+    console.log(state)
+    state.push(user);
     console.log('user.regist', state)
   },
 
-  eidt (state, value) {
-    const target = state.users.find((u) => u.id === value.id);
-    target = value;
+  edit (state, value) {
+    const targetIndex = state.findIndex((u) => u.id === value.id);
+    state.splice(targetIndex, 1, value);
   }
 }
 
 export const getters = {
   userById: (state) => (id) => {
-    return state.users.find((u) => u.id === id);
+    console.log('user getters', state, id, state.find((u) => u.id === id))
+    return state.find((u) => {
+      console.log(u, id);
+      return u.id === id;
+    });
   }
 }
   

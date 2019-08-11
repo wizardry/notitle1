@@ -12,7 +12,7 @@ import UserForm from '~/components/UserForm.vue';
 
 export default {
   components: {
-    UserList,
+    UserForm,
   }
 }
 </script>

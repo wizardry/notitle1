@@ -82,9 +82,8 @@
 export default {
   data() {
     return {
-      src: '',
-      hoverShow: false,
-    };
+      user: this.mode === 'regist' ? {} : { ...this.$store.getters['users/userById'](this.userId) }
+    }
   },
   props: {
     mode: {
@@ -100,7 +99,8 @@ export default {
     modeSubmitText() {
       return this.mode === 'regist' ? '登録' : '編集';
     },
-    user() {
+    userTemp() {
+      console.log(this.userId, this.$store);
       return this.mode === 'regist' ? {} : { ...this.$store.getters['users/userById'](this.userId) };
     }
   },
@@ -121,7 +121,7 @@ export default {
       if (this.mode === 'regist') {
         this.$store.commit('users/regist', values);
       } else {
-        this.$store.commit('users/edit', this.userId);
+        this.$store.commit('users/edit', { ...values, id: this.userId });
       }
     },
   }
