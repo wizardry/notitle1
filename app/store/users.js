@@ -20,9 +20,7 @@ export const mutations = {
       id: id.toString(),
       ...value,
     }
-    console.log(state)
     state.push(user);
-    console.log('user.regist', state)
   },
 
   edit (state, value) {
@@ -33,9 +31,7 @@ export const mutations = {
 
 export const getters = {
   userById: (state) => (id) => {
-    console.log('user getters', state, id, state.find((u) => u.id === id))
     return state.find((u) => {
-      console.log(u, id);
       return u.id === id;
     });
   }

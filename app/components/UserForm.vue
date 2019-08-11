@@ -100,13 +100,11 @@ export default {
       return this.mode === 'regist' ? '登録' : '編集';
     },
     userTemp() {
-      console.log(this.userId, this.$store);
       return this.mode === 'regist' ? {} : { ...this.$store.getters['users/userById'](this.userId) };
     }
   },
   methods: {
     onSubmit(event){
-      console.log(event, 'onsubmit', this.$store);
       const form = event.target
       const values = {
         name: form.name.value,
