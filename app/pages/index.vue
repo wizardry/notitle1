@@ -1,20 +1,31 @@
 <template>
   <div class="container">
-    <user-list />
-    <user-form />
-    <user-form mode="edit" user-id="0" />
-    <p>{{ users }}</p>
+    <div>
+      <user-list />
+      <user-form />
+      <user-form mode="edit" user-id="0" />
+      <p>{{ users }}</p>
+    </div>
+    <div>
+      <training-list />
+      <training-form />
+      <training-form mode="edit" user-id="0" />
+    </div>
   </div>
 </template>
 
 <script>
 import UserList from '~/components/UserList.vue'
 import UserForm from '~/components/UserForm.vue'
+import TrainingList from '~/components/TrainingList.vue'
+import TrainingForm from '~/components/TrainingForm.vue'
 
 export default {
   components: {
     UserForm,
     UserList,
+    TrainingList,
+    TrainingForm,
   },
   computed: {
     users() {
@@ -25,22 +36,4 @@ export default {
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.url-input-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index:2;
-}
-.frame {
-  z-index: 1;
-}
 </style>

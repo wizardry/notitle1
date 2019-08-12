@@ -1,18 +1,18 @@
 <template>
   <div class="container">
-    <user-form
+    <training-form
       mode="edit"
-      :user-id="$route.params.id"
+      :training-id="$route.params.id"
     />
   </div>
 </template>
 
 <script>
-import UserForm from '~/components/UserForm.vue';
+import TrainingForm from '~/components/TrainingForm.vue';
 
 export default {
   components: {
-    UserForm,
+    TrainingForm,
   }
 }
 </script>

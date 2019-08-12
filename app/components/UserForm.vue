@@ -28,6 +28,7 @@
           type="radio"
           value="0"
           name="gender"
+          :checked="user.gender === '0'"
         />
       </dd>
       <dd>
@@ -36,6 +37,7 @@
           type="radio"
           value="1"
           name="gender"
+          :checked="user.gender === '1'"
         />
       </dd>
     </dl>
@@ -55,6 +57,7 @@
         <input
           type="number"
           name="weight"
+          step="0.1"
           :value="user.weight"
         />Kg
       </dd>
@@ -65,6 +68,7 @@
         <input
           type="number"
           name="fat"
+          step="0.1"
           :value="user.fat"
         />%
       </dd>
@@ -115,11 +119,11 @@ export default {
         fat: form.fat.value,
         comment: form.comment.value,
       };
-      console.log(values,this.$store);
       if (this.mode === 'regist') {
         this.$store.commit('users/regist', values);
       } else {
         this.$store.commit('users/edit', { ...values, id: this.userId });
+        this.$router.push('/users');
       }
     },
   }

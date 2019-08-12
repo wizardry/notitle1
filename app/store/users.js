@@ -10,7 +10,18 @@
 
  */
 
-export const state = () => ([])
+const dummyUser = {
+  id: '0',
+  name: 'user1',
+  age: 31,
+  gender: 0,
+  weight: 58.8,
+  height: 163,
+  fat: 20.8,
+  comment: 'init user.'
+}
+
+export const state = () => ([ dummyUser ])
   
 export const mutations = {
 

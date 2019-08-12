@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-    <user-form />
+    <training-list />
   </div>
 </template>
 
 <script>
-import UserForm from '~/components/UserForm.vue'
+import TrainingList from '~/components/TrainingList.vue';
 
 export default {
   components: {
-    UserForm,
+    TrainingList,
   }
 }
 </script>

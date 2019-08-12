@@ -2,22 +2,30 @@
   <div>
     <header>
       <h1 class="title">
-        youtube iframe
+        トレログ！
       </h1>
+      <address>
+        developed by <a href="https://github.com/wizardry/notitle1" target="_blank">@wiz_rein</a>
+      </address>
     </header>
-    <ul>
-      <li><nuxt-link to="/">TOP</nuxt-link></li>
-      <li><nuxt-link to="/users">user</nuxt-link></li>
-      <li><nuxt-link to="/trainings">training</nuxt-link></li>
-    </ul>
-    <nuxt />
-    <footer>
-      <a href="#">develop by @wiz_ren</a>
-    </footer>
+    <div class="page-container">
+      <nav class="global-nav">
+        <ul>
+          <li><nuxt-link to="/"><img src="~/assets/images/nav_dashboard.svg" alt=""></nuxt-link></li>
+          <li><nuxt-link to="/users"><img src="~/assets/images/nav_users.svg" alt=""></nuxt-link></li>
+          <li><nuxt-link to="/trainings"><img src="~/assets/images/nav_trainings.svg" alt=""></nuxt-link></li>
+          <li><nuxt-link to="/help"><img src="~/assets/images/nav_help.svg" alt=""></nuxt-link></li>
+        </ul>
+      </nav>
+      <nuxt />
+    </div>
   </div>
 </template>
 
 <style lang="scss">
+
+@import "~/assets/scss/variables.scss";
+
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -41,33 +49,10 @@ body {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .title {
@@ -76,5 +61,27 @@ body {
   font-weight: bold;
   color: #324252;
   border-bottom: 1px solid #324252;
+}
+
+.page-container {
+  display: flex;
+}
+
+.global-nav {
+  padding: 8px;
+  width: 42px;
+  box-shadow: 0 1px 1px #ccc; 
+  
+  li {
+    margin-top: 8px;
+  }
+
+  a {
+    display: block;
+  }
+
+  img {
+    width: 100%;
+  }
 }
 </style>
